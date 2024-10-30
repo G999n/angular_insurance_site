@@ -1,0 +1,40 @@
+<div class="bg-teal-800 text-white flex flex-col lg:flex-row gap-8 p-8">
+    <div class="flex flex-col gap-6">
+      <div *ngFor="let review of reviews" class="bg-white text-gray-800 rounded-lg p-6 w-full lg:w-96 shadow-lg">
+        <div class="flex items-center gap-4 mb-4">
+          <img [src]="review.imageUrl" alt="{{ review.name }}" class="w-16 h-16 rounded-full object-cover" />
+          <div>
+            <h3 class="font-bold text-lg">{{ review.name }}</h3>
+            <p class="text-teal-600">{{ review.position }}</p>
+          </div>
+        </div>
+        <div class="flex items-center mb-2">
+          <span *ngFor="let star of [].constructor(review.rating)" class="text-yellow-400 text-lg">&#9733;</span>
+        </div>
+        <p class="text-gray-600">{{ review.text }}</p>
+      </div>
+
+      <div class="bg-white text-gray-800 rounded-lg p-6 w-full lg:w-96 shadow-lg text-center">
+        <div class="flex items-center justify-center mb-4">
+          <span class="text-yellow-400 text-lg">&#9733;</span>
+          <span class="text-yellow-400 text-lg">&#9733;</span>
+          <span class="text-yellow-400 text-lg">&#9733;</span>
+          <span class="text-yellow-400 text-lg">&#9733;</span>
+          <span class="text-yellow-400 text-lg">&#9733;</span>
+        </div>
+        <p>Average {{ averageRating }} from {{ totalReviews }}+ reviews of our customers.</p>
+      </div>
+    </div>
+
+    <div class="lg:ml-auto flex flex-col justify-center items-start lg:items-start gap-4">
+      <p class="text-sm tracking-widest">OUR REVIEW</p>
+      <h2 class="text-4xl font-bold leading-tight">What they say about us<br />honest reviews</h2>
+      <p class="text-gray-300 leading-relaxed">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis placerat arcu nibh sed placerat elementum. Urna eu et purus et mi sit rhoncus.
+      </p>
+      <button class="mt-4 bg-teal-600 text-white py-2 px-6 rounded-lg hover:bg-teal-500 transition">
+        View More
+      </button>
+    </div>
+  </div>
+  
